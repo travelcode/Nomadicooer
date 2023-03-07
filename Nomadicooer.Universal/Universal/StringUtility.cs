@@ -25,6 +25,7 @@ namespace Nomaidcooer.Universal
             }
             return str;
         }
+
         /// <summary>
         /// 添加双引号
         /// </summary>
