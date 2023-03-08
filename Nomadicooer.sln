@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nomadicooer.Universal", "Nomadicooer.Universal\Nomadicooer.Universal.csproj", "{4F2094F0-E68A-4D80-A99B-BBBDC79E8459}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomadicooer.Universal", "Nomadicooer.Universal\Nomadicooer.Universal.csproj", "{4F2094F0-E68A-4D80-A99B-BBBDC79E8459}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nomadicooer.Translator", "Nomadicooer.Translator\Nomadicooer.Translator.csproj", "{576B5568-5067-42B2-BEBD-6596BB311DE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomadicooer.Translator", "Nomadicooer.Translator\Nomadicooer.Translator.csproj", "{576B5568-5067-42B2-BEBD-6596BB311DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nomadicooer.Tests", "Nomaidcooer.Tests\Nomadicooer.Tests.csproj", "{6B1E717B-0B5D-4354-9E2C-3BCD57BF3FB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomadicooer.Tests", "Nomaidcooer.Tests\Nomadicooer.Tests.csproj", "{6B1E717B-0B5D-4354-9E2C-3BCD57BF3FB4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4F2094F0-E68A-4D80-A99B-BBBDC79E8459} = {4F2094F0-E68A-4D80-A99B-BBBDC79E8459}
 		{576B5568-5067-42B2-BEBD-6596BB311DE5} = {576B5568-5067-42B2-BEBD-6596BB311DE5}

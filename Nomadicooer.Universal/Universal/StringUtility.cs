@@ -48,15 +48,7 @@ namespace Nomaidcooer.Universal
         /// <returns></returns>
         public static string ToMd5(string text)
         {
-            MD5 md5 = MD5.Create();
-            byte[] testBytes = Encoding.UTF8.GetBytes(text);
-            byte[] result = md5.ComputeHash(testBytes);
-            StringBuilder hash =new StringBuilder();
-            foreach (var item in result)
-            {
-                hash.Append(item.ToString("x2"));
-            }
-            return hash.ToString();
+            return ToMd5(text, Encoding.UTF8);
         }
         /// <summary>
         /// 将字符串转化为Md5字符串
