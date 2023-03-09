@@ -3,7 +3,7 @@
     /// <summary>
     /// 两字符语言代码,ISO6391标准使用的时候应该转化为小写
     /// </summary>
-    public enum LanguageCodeAlpha2
+    public enum TwoLetterLanguageCode
     {
         /// <summary>
         /// 中文=>阿布哈兹语       英文=>Abkhazian
@@ -13,6 +13,7 @@
         /// 中文=>阿法尔语       英文=>Afar
         /// </summary>
         Aa,
+        /// <summary>
         /// <summary>
         /// 中文=>南非语       英文=>Afrikaans
         /// </summary>

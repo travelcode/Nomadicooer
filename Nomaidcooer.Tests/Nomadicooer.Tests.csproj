@@ -18,10 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Translator\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Nomadicooer.Translator\Nomadicooer.Translator.csproj" />
     <ProjectReference Include="..\Nomadicooer.Universal\Nomadicooer.Universal.csproj" />
   </ItemGroup>
 

@@ -7,7 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Translator\" />
+    <PackageReference Include="System.Text.Json" Version="7.0.2">
+      <GeneratePathProperty>True</GeneratePathProperty>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Nomadicooer.Universal\Nomadicooer.Universal.csproj" />
   </ItemGroup>
 
 </Project>
