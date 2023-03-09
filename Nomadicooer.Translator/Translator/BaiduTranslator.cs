@@ -1,7 +1,7 @@
-﻿using Nomaidcooer.Universal;
+﻿using Newtonsoft.Json;
+using Nomaidcooer.Universal;
 using System;
 using System.Text;
-using System.Text.Json;
 
 namespace Nomadicooer.Translator
 {
@@ -42,12 +42,14 @@ namespace Nomadicooer.Translator
             string sign = StringUtility.ToMd5(appid + queryString + salt + secretKey);
             (string key, string value)[] args = {("q",queryString),("from",from),("to",to),("appid",appid),("salt",salt),("sign",sign) };
             string jsonString= HttpRequetUtility.GetRequet(apiAdress,args);
-            JsonSerializerOptions option = new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            };
-            BaiduTranslateResponse resultNode = JsonSerializer.Deserialize<BaiduTranslateResponse>(jsonString, option);
-            return resultNode;
+            BaiduTranslateResponse response = JsonConvert.DeserializeObject<BaiduTranslateResponse>(jsonString);
+            int erroCode= int.Parse(response.ErroCode);
+            if (erroCode>0) {
+                response.From = from;
+                response.To = to;
+                response.Reson = TranslateReson.Failed;
+            }
+            return response;
         }
     }
 }

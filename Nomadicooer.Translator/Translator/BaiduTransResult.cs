@@ -1,13 +1,12 @@
-﻿using System.Text.Json.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace Nomadicooer.Translator
 {
     public class BaiduTransResult : ITransResult
     {
-        [JsonPropertyName("src")]
+        [JsonProperty(propertyName: "src")]
         public string Src{ get; set; }
-
-        [JsonPropertyName("dst")]
+        [JsonProperty(propertyName: "dst")]
         public string Dst { get; set; }
     }
 }
