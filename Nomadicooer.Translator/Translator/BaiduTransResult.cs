@@ -1,12 +1,15 @@
-﻿using Newtonsoft.Json;
-
-namespace Nomadicooer.Translator
+﻿namespace Nomadicooer.Translator
 {
     public class BaiduTransResult : ITransResult
     {
-        [JsonProperty(propertyName: "src")]
-        public string Src{ get; set; }
-        [JsonProperty(propertyName: "dst")]
-        public string Dst { get; set; }
+
+        public BaiduTransResult(string src, string dst)
+        {
+            Src = src;
+            Dst = dst;
+        }
+
+        public string Src { get; internal set; }
+        public string Dst { get; internal set; }
     }
 }

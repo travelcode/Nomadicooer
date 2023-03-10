@@ -6,9 +6,14 @@
     <Authors>Nomaidcooer</Authors>
     <Description>用于Net平台通用扩展API</Description>
     <RootNamespace>$(Authors)</RootNamespace>
+    <Configurations>Debug;Release;Unity</Configurations>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
     <DebugType>embedded</DebugType>
   </PropertyGroup>
 

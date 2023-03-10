@@ -7,6 +7,11 @@
 
     <IsPackable>false</IsPackable>
     <Authors>Nomadicooer</Authors>
+    <Configurations>Debug;Release;Unity</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unity|AnyCPU'">
+    <DefineConstants>$(DefineConstants);UNITY</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

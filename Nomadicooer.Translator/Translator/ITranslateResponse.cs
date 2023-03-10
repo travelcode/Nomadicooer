@@ -5,7 +5,8 @@ namespace Nomadicooer.Translator
     /// <summary>
     /// 翻译结果
     /// </summary>
-    public interface ITranslateResponse{ 
+    public interface ITranslateResponse
+    {
         /// <summary>
         /// 源语言代码
         /// </summary>
