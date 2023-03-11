@@ -1,4 +1,4 @@
-﻿using System.Security.Cryptography;
+﻿using System;
 using System.Text;
 
 namespace Nomaidcooer.Universal
@@ -38,35 +38,55 @@ namespace Nomaidcooer.Universal
             return stringBuilder.ToString();
         }
         /// <summary>
-        /// 将字符串转换为Md5签名,默认字符串编码为UTF8
+        /// 将字节数组转化为hash串在net5中的Convert.ToHexString(array);
         /// </summary>
+        /// <param name="bytes">要转化的bytes</param>
         /// <returns></returns>
-        /// <summary>
-        /// 转换为MD5
-        /// </summary>
-        /// <param name="text">要转换的文本</param>
-        /// <returns></returns>
-        public static string ToMd5(string text)
-        {
-            return ToMd5(text, Encoding.UTF8);
-        }
-        /// <summary>
-        /// 将字符串转化为Md5字符串
-        /// </summary>
-        /// <param name="text">要转化的文本</param>
-        /// <param name="encoding">字符串文本编码</param>
-        /// <returns></returns>
-        public static string ToMd5(string text, Encoding encoding)
-        {
-            MD5 md5 = MD5.Create();
-            byte[] testBytes = encoding.GetBytes(text);
-            byte[] result = md5.ComputeHash(testBytes);
+        public static string BytesToHash(byte[] bytes) {
             StringBuilder hash = new StringBuilder();
-            foreach (var item in result)
+            foreach (var bt in bytes)
             {
-                hash.Append(item.ToString("x2"));
+                hash.Append(bt.ToString("x2"));
             }
             return hash.ToString();
+        }
+        /// <summary>
+        /// 将字节转化为字符串
+        /// </summary>
+        /// <param name="bytes">要转化的字节</param>
+        /// <returns></returns>
+        public static string BytesTostring(byte[] bytes) { 
+          return Encoding.Default.GetString(bytes);
+        }
+        /// <summary>
+        /// 将字符串转化为byte
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static byte[] StringToBytes(string str) { 
+          return Encoding.Default.GetBytes(str);
+        }
+        /// <summary>
+        /// 将hash字符串转化为对应的整数
+        /// </summary>
+        /// <returns></returns>
+        public static int HashToInt(string hash)
+        {
+            return Convert.ToInt32(hash);
+        }
+        /// <summary>
+        /// 将hash转化为bytes,必须是由byte数组之前转化成的hash
+        /// </summary>
+        /// <param name="hash">要转化的hash</param>
+        /// <returns></returns>
+        public static byte[] HashToBytes(string hash) {
+            hash=hash.ToUpper();
+            byte[] bytes = new byte[hash.Length/2];
+            for (int i = 0; i < bytes.Length; i++)
+            {
+               bytes[i]=Convert.ToByte(hash.Substring(2*i,2),16);
+            }
+            return bytes;
         }
     }
 }

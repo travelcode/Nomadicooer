@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Text;
 
 namespace Nomaidcooer.Universal
@@ -204,7 +205,7 @@ namespace Nomaidcooer.Universal
                     //可能为And
                     else if (wordLen == 3 && chars[i - 3] == Chars.UpperA && chars[i - 2] == Chars.LowerN && chars[i - 1] == Chars.LowerD)
                     {
-                        newString[newString.Length- wordLen] =Chars.LowerA;
+                        newString[newString.Length - wordLen] = Chars.LowerA;
                     }
                     newString.Append(Chars.Space);
                     newString.Append(curChar);

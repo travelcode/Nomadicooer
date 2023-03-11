@@ -40,7 +40,7 @@ namespace Nomadicooer.Translator
                 builder.AppendLine(query);
             }
             string queryString = builder.ToString();
-            string sign = StringUtility.ToMd5(appid + queryString + salt + secretKey);
+            string sign = CryptoUtility.ToMd5(appid + queryString + salt + secretKey);
             (string key, string value)[] args = { ("q", queryString), ("from", from), ("to", to), ("appid", appid), ("salt", salt), ("sign", sign) };
             string jsonString = HttpRequetUtility.GetRequet(apiAdress, args);
             return GetTranslateResponse(from, to, jsonString);
