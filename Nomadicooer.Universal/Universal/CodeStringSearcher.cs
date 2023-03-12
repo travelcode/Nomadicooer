@@ -79,7 +79,7 @@ namespace Nomaidcooer.Universal
                 startRecordSpan = 0,
                 startRecordLineSpan = 0,
                 lineStartSpan = 0,
-                prevChar = '\0',
+                prevChar = Chars.Nul,
                 backSlaskSerialCount = 0,
                 lineBegin = false,
                 record = RecordStatus.Search

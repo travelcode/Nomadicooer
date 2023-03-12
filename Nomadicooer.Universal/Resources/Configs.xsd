@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.nomadicooer.com"
+    xmlns="http://www.nomadicooer.com"
+    xmlns:nc="http://www.nomadicooer.com"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+  <!-- 该xsd元素仅仅是一个标志元素,实际建立的时候应该替换掉-->
+  <xs:element name="configs" id="configs">
+    <xs:annotation>
+      <xs:appinfo>configs</xs:appinfo>
+      <xs:documentation>根元素</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="translators" id="translators">
+          <xs:annotation>
+            <xs:documentation>翻译相关配置</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="translator" id="translator">
+                <xs:annotation>
+                  <xs:documentation>翻译平台对象</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:attribute name="platform" id="platform"  type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation>翻译平台</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  
+                  
+                  
+                  
+                  <xs:attribute name="appid" id="appid" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation>翻译平台Appid</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="secretkey" id="secretkey" type="xs:string">
+                    <xs:annotation>
+                      <xs:documentation>翻译平台密钥</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="encrypt" id="encrypt" type="xs:boolean" default="true" >
+                    <xs:annotation>
+                      <xs:documentation>是否加密,如果加密了需要用对应的</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:all>
+    </xs:complexType>
+    <xs:unique name="translatorUnique" id="translatorUnique">
+      <xs:selector xpath="nc:translator"/>
+      <xs:field xpath="platform"></xs:field>
+    </xs:unique>
+  </xs:element>
+</xs:schema>

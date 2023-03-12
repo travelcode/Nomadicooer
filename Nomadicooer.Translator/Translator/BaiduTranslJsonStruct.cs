@@ -1,7 +1,8 @@
 ﻿
 using System;
 [Serializable]
-public class BaiduTransJsonStruct
+#pragma warning disable IDE1006 // 命名样式
+internal class BaiduTransJsonStruct
 {
     public string from { get; set; }
     public string to { get; set; }
@@ -10,8 +11,10 @@ public class BaiduTransJsonStruct
     public Trans_Result[] trans_result { get; set; }
 }
 [Serializable]
-public class Trans_Result
+internal class Trans_Result
 {
     public string src { get; set; }
+
     public string dst { get; set; }
 }
+#pragma warning restore IDE1006 // 命名样式

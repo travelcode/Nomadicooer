@@ -25,6 +25,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Nomadicooer.Translator\Nomadicooer.Translator.csproj" />
     <ProjectReference Include="..\Nomadicooer.Universal\Nomadicooer.Universal.csproj" />
+    <ProjectReference Include="..\Nomadicooer.Xsd\Nomadicooer.Xsd.csproj" />
   </ItemGroup>
 
 </Project>

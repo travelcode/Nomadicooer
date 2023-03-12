@@ -73,6 +73,39 @@ namespace Nomaidcooer.Universal
 
         }
         /// <summary>
+        /// 将字符串encryptStr加密成一串Hash字符串
+        /// </summary>
+        /// <param name="encryptStr">需要加密的字符串</param>
+        /// <param name="key">加密的时候所用的自动生成密钥,需要妥善保管</param>
+        /// <param name="iv">加密的时候所用的自动生成的IV向量,需要妥善保管</param>
+        /// <param name="encoding">字符串编码方式</param>
+        /// <returns></returns>
+        public static string EncryptToHashWithAes(string encryptStr,ref string key,ref string iv,Encoding encoding)
+        {
+            using (Aes aes = Aes.Create())
+            {
+                key = StringUtility.BytesToHash(encoding.GetBytes(key));
+                iv = StringUtility.BytesToHash(encoding.GetBytes(iv));
+                ICryptoTransform encryptor = aes.CreateEncryptor();
+                string hash = null;
+                using (MemoryStream msEncrypt = new MemoryStream())
+                {
+                    using (CryptoStream csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
+                    {
+                        using (StreamWriter swEncrypt = new StreamWriter(csEncrypt))
+                        {
+                            swEncrypt.Write(encryptStr);
+                        }
+                        //该条语句必须放在外面而不是里面
+                        hash = StringUtility.BytesToHash(msEncrypt.ToArray());
+                    }
+                }
+                return hash;
+
+            }
+
+        }
+        /// <summary>
         /// 将hash加密字符串,解密成原始字符串
         /// </summary>
         /// <param name="decryptStr">需要解密的字符串</param>
