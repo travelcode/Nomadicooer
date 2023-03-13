@@ -12,48 +12,15 @@
       <xs:documentation>根元素</xs:documentation>
     </xs:annotation>
     <xs:complexType>
-      <xs:all>
-        <xs:element name="translators" id="translators">
-          <xs:annotation>
-            <xs:documentation>翻译相关配置</xs:documentation>
-          </xs:annotation>
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="translator" id="translator">
-                <xs:annotation>
-                  <xs:documentation>翻译平台对象</xs:documentation>
-                </xs:annotation>
-                <xs:complexType>
-                  <xs:attribute name="platform" id="platform"  type="xs:string">
-                    <xs:annotation>
-                      <xs:documentation>翻译平台</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
-                  
-                  
-                  
-                  
-                  <xs:attribute name="appid" id="appid" type="xs:string">
-                    <xs:annotation>
-                      <xs:documentation>翻译平台Appid</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
-                  <xs:attribute name="secretkey" id="secretkey" type="xs:string">
-                    <xs:annotation>
-                      <xs:documentation>翻译平台密钥</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
-                  <xs:attribute name="encrypt" id="encrypt" type="xs:boolean" default="true" >
-                    <xs:annotation>
-                      <xs:documentation>是否加密,如果加密了需要用对应的</xs:documentation>
-                    </xs:annotation>
-                  </xs:attribute>
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-      </xs:all>
+      <xs:attribute name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:whiteSpace value="collapse">
+              
+            </xs:whiteSpace>
+          </xs:restriction>          
+        </xs:simpleType>
+      </xs:attribute>
     </xs:complexType>
     <xs:unique name="translatorUnique" id="translatorUnique">
       <xs:selector xpath="nc:translator"/>

@@ -1,4 +1,5 @@
-﻿using Nomadicooer.Xsd;
+﻿using Nomadicooer.Tests.Xsd;
+using Nomadicooer.Xsd;
 using NUnit.Framework;
 
 namespace Nomadicooer.Tests.Xs
@@ -7,8 +8,9 @@ namespace Nomadicooer.Tests.Xs
     {
         [Test]
         public void TestXsdGenarator() {
-            XsdGenerator xsdGenerator = new XsdGenerator(typeof(XsdAssistor));
-            Console.WriteLine(xsdGenerator.generate());
+            XsdGenerator xsdGenerator = new XsdGenerator(typeof(IConfigs));
+            Console.WriteLine(xsdGenerator.Generate());
         }
+
     }
 }
